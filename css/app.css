@@ -1,9 +1,3 @@
-@font-face {
-    font-family: "Alcubierre";
-    src: url("../fonts/Alcubierre.otf")
-}
-
-
 * {
     box-sizing: border-box;
     font-family: "Arial";

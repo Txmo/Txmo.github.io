@@ -1,5 +1,5 @@
-import {TransactionGroup} from "../../TransactionGroup.js";
-import {TransactionData} from "./Transaction/TransactionData.js";
+import {TransactionGroup} from "../Group/TransactionGroup.js";
+import {TransactionData} from "../Transaction/TransactionData.js";
 
 export class UiHandler {
 

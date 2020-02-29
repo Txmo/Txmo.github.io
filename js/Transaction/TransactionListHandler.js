@@ -1,6 +1,6 @@
 import {TransactionList} from "./TransactionList.js";
 import {AbstractTransactionHandler} from "./AbstractTransactionHandler.js";
-import {UiHandler} from "../UiHandler.js";
+import {UiHandler} from "../Ui/UiHandler.js";
 
 export class TransactionListHandler {
 

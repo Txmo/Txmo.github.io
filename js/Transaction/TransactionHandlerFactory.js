@@ -1,6 +1,6 @@
 import {CsvData} from "../CSV/CsvData.js";
-import {SpkCsvCamtTransactionHandler} from "../Transaction/SpkCsvCamtTransactionHandler.js";
-import {SpkCsvMt940TransactionHandler} from "../Transaction/SpkCsvMt940TransactionHandler.js";
+import {SpkCsvCamtTransactionHandler} from "./SpkCsvCamtTransactionHandler.js";
+import {SpkCsvMt940TransactionHandler} from "./SpkCsvMt940TransactionHandler.js";
 import {NoTransactionHandlerFound} from "../Exception/NoTransactionHandlerFound.js";
 
 export class TransactionHandlerFactory {

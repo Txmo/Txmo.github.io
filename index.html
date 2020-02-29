@@ -1,50 +1,76 @@
 <!DOCTYPE html>
-<html lang="de">
-
+<html lang="en">
 <head>
-    <title>Txmo's</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <link href="./css/blueprint.min.css" rel="stylesheet" />
-    <script type="module" src="./UiHelper.js"></script>
-    <script type="module" src="./CSVParser.js"></script>
-    <script type="module" src="./Analysis.js"></script>
+    <meta charset="UTF-8">
+    <title>Welcome to Txmo's</title>
+    <link rel="stylesheet" href="css/blueprint.min.css">
+    <link rel="stylesheet" href="css/app.css">
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 </head>
-
-<body>
-<div class="container">
-    <div id="header" class="header"></div>
-    <div id="uploadContainer" class="upload"></div>
-    <div id="transactionsContainer" class="transaction-list"></div>
-    <div id="side" class="side">
-        <div id="groupCreation">
-            <div id="addGroupContainer" class="hidden">
-                <input id="groupName" type="text" placeholder="Enter group name here...">
-                <button id="buttonAdd" class="mainButton" type="button">Add</button>
-                <button id="buttonCancel" class="mainButton float-right" type="button">Cancel</button>
-            </div>
-            <button id="buttonOpenCreation" class="mainButton is-fullwidth clear-both" type="button">Create
-                Group
-            </button>
-        </div>
-        <div id="groupContainer" class="grid"></div>
+<body class="container">
+<header bp="grid vertical-center">
+    <div bp="2 text-left">
+        <img draggable="false" class="lab-icon" src="icons/lab_icon_big.png" alt="lab_icon">
     </div>
-    <div id="footer" class="footer"></div>
-</div>
+    <div class="heading" bp="8 text-center">
+        <span>Txmo's Banking Lab</span>
+    </div>
+    <div bp="2 text-right">
+        <a href="https://github.com/Txmo" target="_blank">GitHub</a>
+    </div>
+</header>
+<main>
+    <div bp="grid text-center" class="upload-container" id="uploadContainer">
+        <label bp="12" class="button" for="csvFile">Upload CSV</label>
+        <input class="invisible" type="file" id="csvFile" name="csvFile" accept=".csv" multiple>
+        <button bp="12" class="button analysis-button invisible" type="button" id="analysisButton">Analise
+            Transactions
+        </button>
+    </div>
+    <div bp="grid" class="group-container" id="groupContainer">
+        <div bp="3">
+            <input id="groupName" type="text" class="small-add-group" placeholder="Group name">
+            <button id="addButton" class="small-add-group button" type="button">Add Group</button>
+        </div>
+    </div>
+    <div bp="grid" class="transaction-container" id="transactionContainer"></div>
+    <div bp="grid" class="analysis-container visibility-hidden" id="analysisContainer">
+        <div bp="12" class="close-image-container">
+            <img class="analysis-close" alt="close" title="close" id="closeAnalysis" src="icons/close.png">
+        </div>
+        <div bp="grid 12" id="analysis">
 
+        </div>
+    </div>
+</main>
+<footer bp="grid"></footer>
 <script type="module">
-    import {Analysis} from './Analysis.js'
+    import {Analysis} from "./js/Analysis/Analysis.js";
 
     const analysis = new Analysis();
-    document.getElementById('buttonOpenCreation').addEventListener('click', () => {
-        analysis.uiHelper.showGroupCreation()
+
+    document.getElementById('addButton').addEventListener("click", () => {
+        try {
+            const input = document.getElementById('groupName');
+            analysis.addGroup(input.value);
+            input.value = '';
+            input.focus();
+        } catch (e) {
+            analysis.uiHandler.addGroupError();
+        }
     });
-    document.getElementById('buttonCancel').addEventListener('click', () => {
-        analysis.uiHelper.cancelGroupCreation()
+
+    document.getElementById("csvFile").addEventListener("change", (e) => {
+        analysis.readInFiles(e.target);
     });
-    document.getElementById('buttonAdd').addEventListener('click', () => {
-        analysis.addGroup()
-    })
+
+    document.getElementById('analysisButton').addEventListener('click', () => {
+        analysis.analise();
+    });
+
+    document.getElementById('closeAnalysis').addEventListener('click', () => {
+        analysis.close();
+    });
 </script>
 </body>
-
 </html>
