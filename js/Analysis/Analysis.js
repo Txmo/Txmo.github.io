@@ -1,9 +1,9 @@
-import {TransactionListHandler} from "./Transaction/TransactionListHandler.js";
-import {TransactionGroupHandler} from "./Group/TransactionGroupHandler.js";
-import {UiHandler} from "./UiHandler.js";
-import {CsvDataHandler} from "./CSV/CsvDataHandler.js";
-import {CsvData} from "./CSV/CsvData.js";
-import {TransactionHandlerFactory} from "./Transaction/TransactionHandlerFactory.js";
+import {TransactionListHandler} from "../Transaction/TransactionListHandler.js";
+import {TransactionGroupHandler} from "../Group/TransactionGroupHandler.js";
+import {UiHandler} from "../Ui/UiHandler.js";
+import {CsvDataHandler} from "../CSV/CsvDataHandler.js";
+import {CsvData} from "../CSV/CsvData.js";
+import {TransactionHandlerFactory} from "../Transaction/TransactionHandlerFactory.js";
 
 export class Analysis {
     listHandler;
