@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="e807e0c7-ea70-4a9b-a2f6-9b31c624b475" name="timo-webserver" url="http://192.168.178.22">
+        <fileTransfer host="192.168.178.22" port="22" rootFolder="/var/www/txmo.github.io" accessType="SFTP">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+          <option name="port" value="22" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

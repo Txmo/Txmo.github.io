@@ -1,0 +1,136 @@
+@font-face {
+    font-family: "Alcubierre";
+    src: url("../fonts/Alcubierre.otf")
+}
+
+
+* {
+    box-sizing: border-box;
+    font-family: "Arial";
+}
+
+.container {
+    max-width: 90vw;
+    margin: auto;
+}
+
+header {
+    min-height: 15vh;
+    line-height: 15vh;
+}
+
+header .heading {
+    font-size: 3rem;
+}
+
+.lab-icon{
+    height: 64px;
+}
+
+.button {
+    color: white;
+    background-color: mediumseagreen;
+    border: none;
+}
+
+.button:hover {
+    color: mediumseagreen;
+    background-color: white;
+    border: none;
+}
+
+.transaction-list {
+    list-style: none;
+}
+
+.list-item-name {
+    font-weight: bold;
+}
+
+.group-container {
+    min-height: 10vh;
+    margin-top: 15px;
+}
+
+.group {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    line-height: 8vh;
+    font-size: 1.5rem;
+    border: 1px solid black;
+    word-wrap: break-word;
+}
+
+.group-dragged-over {
+    border-style: dashed;
+    background-color: aliceblue;
+}
+
+.transaction-container{
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.transaction {
+    user-select: none;
+    -webkit-user-drag: element;
+    -khtml-user-drag: element;
+    word-wrap: break-word;
+    background-color: aqua;
+    width: 100%;
+}
+
+.transaction ul{
+    padding: 5px;
+}
+
+.upload-container {
+    min-height: 5vh;
+    line-height: 5vh;
+    font-size: 2rem;
+    width: 100%;
+}
+
+.invisible {
+    display: none;
+}
+
+.visibility-hidden{
+    visibility: hidden;
+}
+
+.analysis-container {
+    overflow-y: scroll;
+    height: 90vh;
+    position: absolute;
+    top: 5vh;
+    background-color: pink;
+    width: 90vw;
+    -ms-overflow-style: none;
+}
+
+.analysis-close{
+    cursor: pointer;
+    height: 64px;
+}
+
+.close-image-container{
+    text-align: right;
+}
+
+.analysis-container::-webkit-scrollbar{
+    display: none;
+}
+
+.analysis-button {
+    min-height: 5vh;
+    line-height: 5vh;
+    font-size: 2rem;
+}
+
+.small-add-group {
+    width: 100%;
+    height: 50%;
+    font-size: 1.5rem;
+}
