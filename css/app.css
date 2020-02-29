@@ -1,6 +1,7 @@
 * {
     box-sizing: border-box;
     font-family: "Arial";
+    color: rgb(42, 42, 46)
 }
 
 .container {
@@ -17,20 +18,45 @@ header .heading {
     font-size: 3rem;
 }
 
-.lab-icon{
+a {
+    color: black;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.lab-icon {
     height: 64px;
+}
+
+main {
+    min-height: 85vh;
+}
+
+footer {
+    color: white;
+    background-color: rgb(42, 42, 46);
+    height: 10vh;
+}
+
+footer a {
+    color: white;
 }
 
 .button {
     color: white;
     background-color: mediumseagreen;
     border: none;
+    cursor: pointer;
 }
 
 .button:hover {
     color: mediumseagreen;
     background-color: white;
     border: none;
+    box-shadow: 5px 5px 5px grey;
 }
 
 .transaction-list {
@@ -61,7 +87,7 @@ header .heading {
     background-color: aliceblue;
 }
 
-.transaction-container{
+.transaction-container {
     margin-top: 15px;
     margin-bottom: 15px;
 }
@@ -71,11 +97,17 @@ header .heading {
     -webkit-user-drag: element;
     -khtml-user-drag: element;
     word-wrap: break-word;
-    background-color: aqua;
+    background-color: mediumseagreen;
     width: 100%;
 }
 
-.transaction ul{
+.transaction:hover{
+    cursor: pointer;
+    background-color: #ebebeb;
+    box-shadow: 2px 2px 5px grey;
+}
+
+.transaction ul {
     padding: 5px;
 }
 
@@ -90,7 +122,7 @@ header .heading {
     display: none;
 }
 
-.visibility-hidden{
+.visibility-hidden {
     visibility: hidden;
 }
 
@@ -104,17 +136,49 @@ header .heading {
     -ms-overflow-style: none;
 }
 
-.analysis-close{
+.analysis-container::-webkit-scrollbar {
+    display: none;
+}
+
+.analysis{
+
+}
+
+.analysis-group{
+    height: 10vh;
+    font-size: 1rem;
+    padding: 5px;
+    margin: 10px 0;
+}
+
+.analysis-name{
+    font-weight: bold;
+}
+
+.analysis-count-name{
+    font-weight: bold;
+}
+
+.analysis-count-value {
+
+}
+
+.analysis-total-name{
+    font-weight: bold;
+}
+
+.analysis-total-value{
+
+}
+
+.analysis-close {
     cursor: pointer;
     height: 64px;
 }
 
-.close-image-container{
+.close-image-container {
     text-align: right;
-}
-
-.analysis-container::-webkit-scrollbar{
-    display: none;
+    height: 10vh;
 }
 
 .analysis-button {

@@ -5,7 +5,7 @@
     <title>Welcome to Txmo's</title>
     <link rel="stylesheet" href="css/blueprint.min.css">
     <link rel="stylesheet" href="css/app.css">
-    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="./favicon.ico">
 </head>
 <body class="container">
 <header bp="grid vertical-center">
@@ -16,14 +16,14 @@
         <span>Txmo's Banking Lab</span>
     </div>
     <div bp="2 text-right">
-        <a href="https://github.com/Txmo" target="_blank">GitHub</a>
+        <a href="https://github.com/Txmo/txmo.github.io" target="_blank">on GitHub</a>
     </div>
 </header>
 <main>
     <div bp="grid text-center" class="upload-container" id="uploadContainer">
         <label bp="12" class="button" for="csvFile">Upload CSV</label>
         <input class="invisible" type="file" id="csvFile" name="csvFile" accept=".csv" multiple>
-        <button bp="12" class="button analysis-button invisible" type="button" id="analysisButton">Analise
+        <button bp="12" class="button analysis-button invisible" type="button" id="analysisButton">Analize
             Transactions
         </button>
     </div>
@@ -38,12 +38,22 @@
         <div bp="12" class="close-image-container">
             <img class="analysis-close" alt="close" title="close" id="closeAnalysis" src="icons/close.png">
         </div>
-        <div bp="grid 12" id="analysis">
+        <div bp="grid 12" class="analysis" id="analysis">
 
         </div>
     </div>
 </main>
-<footer bp="grid"></footer>
+<footer bp="grid vertical-center">
+    <div bp="4 text-center">
+        <a href="https://github.com/Txmo/txmo.github.io/blob/master/README.md" target="_blank">How do I use this?</a>
+    </div>
+    <div bp="4 text-center">
+        made with <a href="https://blueprintcss.dev/" target="_blank">BlueprintCSS</a>
+    </div>
+    <div bp="4 text-center">
+        <a href="https://github.com/Txmo" target="_blank">my GitHub</a>
+    </div>
+</footer>
 <script type="module">
     import {Analysis} from "./js/Analysis/Analysis.js";
 

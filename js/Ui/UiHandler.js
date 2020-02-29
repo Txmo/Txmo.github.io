@@ -133,25 +133,30 @@ export class UiHandler {
         let outer = document.createElement('div');
         outer.id = 'analysisGroup' + group.id;
         outer.classList.add('analysis-group');
-        outer.setAttribute('bp', '4 text-center');
+        outer.setAttribute('bp', '12 text-center');
 
         let name = document.createElement('div');
+        name.classList.add('analysis-name');
         name.innerText = group.name;
         outer.appendChild(name);
 
         let transactionCount = document.createElement('div');
+        transactionCount.classList.add('analysis-count-name');
         transactionCount.innerText = "Transaction count";
-        outer.appendChild(name);
+        outer.appendChild(transactionCount);
 
         let countValue = document.createElement('div');
+        countValue.classList.add('analysis-count-value');
         countValue.innerText = group.transactionCount.toString();
         outer.appendChild(countValue);
 
         let total = document.createElement('div');
+        total.classList.add('analysis-total-name');
         total.innerText = 'Value';
         outer.appendChild(total);
 
         let totalValue = document.createElement('div');
+        totalValue.classList.add('analysis-total-value');
         totalValue.innerText = group.value.toLocaleString(window.navigator.language === 'de' ? 'de-DE' : 'en-EN', {
             minimumFractionDigits: 2,
             maximumFractionDigits: 2
@@ -161,8 +166,8 @@ export class UiHandler {
         return outer;
     }
 
-    clearAnalysis(){
-        while(this.analysis.lastChild){
+    clearAnalysis() {
+        while (this.analysis.lastChild) {
             this.analysis.removeChild(this.analysis.lastChild);
         }
     }
