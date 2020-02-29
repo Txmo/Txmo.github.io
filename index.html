@@ -1,10 +1,50 @@
 <!DOCTYPE html>
-<html lang="de" dir="ltr">
-    <head>
-        <meta charset="utf-8">
-        <title></title>
-    </head>
-    <body>
-        <p>hello world</p>
-    </body>
+<html lang="de">
+
+<head>
+    <title>Txmo's</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link href="./css/blueprint.min.css" rel="stylesheet" />
+    <script type="module" src="./UiHelper.js"></script>
+    <script type="module" src="./CSVParser.js"></script>
+    <script type="module" src="./Analysis.js"></script>
+</head>
+
+<body>
+<div class="container">
+    <div id="header" class="header"></div>
+    <div id="uploadContainer" class="upload"></div>
+    <div id="transactionsContainer" class="transaction-list"></div>
+    <div id="side" class="side">
+        <div id="groupCreation">
+            <div id="addGroupContainer" class="hidden">
+                <input id="groupName" type="text" placeholder="Enter group name here...">
+                <button id="buttonAdd" class="mainButton" type="button">Add</button>
+                <button id="buttonCancel" class="mainButton float-right" type="button">Cancel</button>
+            </div>
+            <button id="buttonOpenCreation" class="mainButton is-fullwidth clear-both" type="button">Create
+                Group
+            </button>
+        </div>
+        <div id="groupContainer" class="grid"></div>
+    </div>
+    <div id="footer" class="footer"></div>
+</div>
+
+<script type="module">
+    import {Analysis} from './Analysis.js'
+
+    const analysis = new Analysis();
+    document.getElementById('buttonOpenCreation').addEventListener('click', () => {
+        analysis.uiHelper.showGroupCreation()
+    });
+    document.getElementById('buttonCancel').addEventListener('click', () => {
+        analysis.uiHelper.cancelGroupCreation()
+    });
+    document.getElementById('buttonAdd').addEventListener('click', () => {
+        analysis.addGroup()
+    })
+</script>
+</body>
+
 </html>
