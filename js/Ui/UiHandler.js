@@ -9,6 +9,9 @@ export class UiHandler {
     analysisContainer;
     analysis;
     groupName;
+    bigGroupContainer;
+    bigGroupOuter;
+    cover;
 
     constructor() {
         this.transactionContainer = document.getElementById('transactionContainer');
@@ -17,6 +20,9 @@ export class UiHandler {
         this.uploadContainer = document.getElementById('uploadContainer');
         this.analysisContainer = document.getElementById('analysisContainer');
         this.analysis = document.getElementById('analysis');
+        this.bigGroupContainer = document.getElementById('bigGroupContainer');
+        this.bigGroupOuter = document.getElementById('bigGroupOuter');
+        this.cover = document.getElementById('cover');
     }
 
     clearTransactionContainer() {
@@ -36,6 +42,8 @@ export class UiHandler {
         outer.id = 'group' + group.id;
         outer.setAttribute('data-id', group.id);
         outer.setAttribute('bp', '3');
+        const clone = outer.cloneNode(true);
+        clone.classList.add('group');
         outer.ondrop = (event) => {
             event.preventDefault();
             event.target.classList.remove('group-dragged-over');
@@ -55,8 +63,9 @@ export class UiHandler {
             event.preventDefault();
             event.target.classList.remove('group-dragged-over');
         };
-        outer.classList.add('group');
-        this.groupContainer.appendChild(outer);
+        outer.classList.add('group', 'big-group');
+        this.groupContainer.appendChild(clone);
+        this.bigGroupContainer.appendChild(outer);
     }
 
     addGroupError() {
@@ -76,10 +85,24 @@ export class UiHandler {
         outer.setAttribute('draggable', 'true');
         outer.ondragstart = (event) => {
             event.dataTransfer.setData('text', transaction.id);
+            this.showGroups();
+        };
+        outer.ondragend = () => {
+            this.hideGroups();
         };
         outer.classList.add('transaction');
         outer.appendChild(this.createList(transaction));
         this.transactionContainer.appendChild(outer);
+    }
+
+    showGroups() {
+        this.cover.classList.remove('visibility-hidden');
+        this.bigGroupOuter.classList.remove('visibility-hidden');
+    }
+
+    hideGroups() {
+        this.cover.classList.add('visibility-hidden');
+        this.bigGroupOuter.classList.add('visibility-hidden');
     }
 
     createList(transaction) {
@@ -124,6 +147,7 @@ export class UiHandler {
             this.analysis.appendChild(this.createGroupAnalysis(groups[i]));
         }
         this.analysisContainer.classList.remove('visibility-hidden');
+        this.cover.classList.remove('visibility-hidden');
     }
 
     /**
@@ -133,7 +157,7 @@ export class UiHandler {
         let outer = document.createElement('div');
         outer.id = 'analysisGroup' + group.id;
         outer.classList.add('analysis-group');
-        outer.setAttribute('bp', '12 text-center');
+        outer.setAttribute('bp', '4 text-center');
 
         let name = document.createElement('div');
         name.classList.add('analysis-name');
@@ -174,5 +198,6 @@ export class UiHandler {
 
     closeAnalysis() {
         this.analysisContainer.classList.add('visibility-hidden');
+        this.cover.classList.add('visibility-hidden');
     }
 }
