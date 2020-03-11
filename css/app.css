@@ -82,9 +82,30 @@ footer a {
     word-wrap: break-word;
 }
 
+.big-group {
+    #height: 25%;
+}
+
 .group-dragged-over {
     border-style: dashed;
     background-color: aliceblue;
+}
+
+.big-group-outer {
+    overflow-y: scroll;
+    height: 90vh;
+    position: fixed;
+    top: 5vh;
+    background-color: #8ab9b9;
+    width: 90vw;
+    -ms-overflow-style: none;
+    padding: 15px;
+    z-index: 3;
+}
+
+.group-container-big {
+    height: auto;
+    width: 100%;
 }
 
 .transaction-container {
@@ -101,7 +122,7 @@ footer a {
     width: 100%;
 }
 
-.transaction:hover{
+.transaction:hover {
     cursor: pointer;
     background-color: #ebebeb;
     box-shadow: 2px 2px 5px grey;
@@ -126,36 +147,53 @@ footer a {
     visibility: hidden;
 }
 
+.cover {
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(48, 48, 48, 0.86);
+    z-index: 1;
+}
+
+.analysis-outer {
+
+}
+
 .analysis-container {
     overflow-y: scroll;
     height: 90vh;
-    position: absolute;
+    position: fixed;
     top: 5vh;
-    background-color: pink;
+    background-color: #8ab9b9;
     width: 90vw;
     -ms-overflow-style: none;
+    padding: 15px;
+    z-index: 3;
 }
 
 .analysis-container::-webkit-scrollbar {
     display: none;
 }
 
-.analysis{
-
+.analysis {
+    height: auto;
+    width: 100%;
 }
 
-.analysis-group{
+.analysis-group {
     height: 10vh;
     font-size: 1rem;
     padding: 5px;
     margin: 10px 0;
 }
 
-.analysis-name{
+.analysis-name {
     font-weight: bold;
 }
 
-.analysis-count-name{
+.analysis-count-name {
     font-weight: bold;
 }
 
@@ -163,11 +201,11 @@ footer a {
 
 }
 
-.analysis-total-name{
+.analysis-total-name {
     font-weight: bold;
 }
 
-.analysis-total-value{
+.analysis-total-value {
 
 }
 
@@ -178,7 +216,7 @@ footer a {
 
 .close-image-container {
     text-align: right;
-    height: 10vh;
+    height: 5vh;
 }
 
 .analysis-button {

@@ -19,11 +19,12 @@
         <a href="https://github.com/Txmo/txmo.github.io" target="_blank">on GitHub</a>
     </div>
 </header>
+<div class="cover visibility-hidden" id="cover"></div>
 <main>
     <div bp="grid text-center" class="upload-container" id="uploadContainer">
         <label bp="12" class="button" for="csvFile">Upload CSV</label>
         <input class="invisible" type="file" id="csvFile" name="csvFile" accept=".csv" multiple>
-        <button bp="12" class="button analysis-button invisible" type="button" id="analysisButton">Analize
+        <button bp="12" class="button analysis-button invisible" type="button" id="analysisButton">Analyze
             Transactions
         </button>
     </div>
@@ -34,12 +35,16 @@
         </div>
     </div>
     <div bp="grid" class="transaction-container" id="transactionContainer"></div>
-    <div bp="grid" class="analysis-container visibility-hidden" id="analysisContainer">
-        <div bp="12" class="close-image-container">
+    <div class="analysis-container visibility-hidden" id="analysisContainer">
+        <div class="close-image-container">
             <img class="analysis-close" alt="close" title="close" id="closeAnalysis" src="icons/close.png">
         </div>
-        <div bp="grid 12" class="analysis" id="analysis">
+        <div bp="grid" class="analysis" id="analysis">
 
+        </div>
+    </div>
+    <div class="big-group-outer visibility-hidden" id="bigGroupOuter">
+        <div bp="grid vertical-center" id="bigGroupContainer" class="group-container-big">
         </div>
     </div>
 </main>
